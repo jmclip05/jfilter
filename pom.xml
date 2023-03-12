@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.rkonovalov</groupId>
+    <groupId>com.github.jmclip05</groupId>
     <artifactId>jfilter</artifactId>
     <version>1.0.18</version>
     <packaging>jar</packaging>
 
     <name>JFilter library</name>
     <description>JFilter library</description>
-    <url>https://rkonovalov.github.io/projects/jfilter</url>
+    <url>https://jmclip05.github.io/projects/jfilter</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,19 +31,10 @@
         </license>
     </licenses>
 
-    <developers>
-        <developer>
-            <name>Ruslan Konovalov</name>
-            <email>rkonovalov86@gmail.com</email>
-            <organization>com.github.rkonovalov</organization>
-            <organizationUrl>https://github.com/rkonovalov/</organizationUrl>
-        </developer>
-    </developers>
-
     <scm>
-        <connection>scm:git:git://github.com/rkonovalov/jfilter.git</connection>
-        <developerConnection>scm:git:ssh://github.com:rkonovalov/jfilter.git</developerConnection>
-        <url>https://github.com/rkonovalov/jfilter</url>
+        <connection>scm:git:git://github.com/jmclip05/jfilter.git</connection>
+        <developerConnection>scm:git:ssh://github.com:jmclip05/jfilter.git</developerConnection>
+        <url>https://github.com/jmclip05/jfilter</url>
     </scm>
 
     <dependencies>
@@ -314,7 +305,10 @@
                     -->
                 </configuration>
             </plugin>
-
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M7</version>
+            </plugin>
         </plugins>
     </build>
 
