@@ -3,9 +3,11 @@ package com.jfilter.components;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfilter.converter.MethodParameterDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -30,7 +32,7 @@ public class ObjectMapperCache {
      * @return {@link ObjectMapperCache}
      */
     @Autowired
-    public ObjectMapperCache setFilterConfiguration(FilterConfiguration filterConfiguration) {
+    public ObjectMapperCache setFilterConfiguration(@Lazy FilterConfiguration filterConfiguration) {
         this.filterConfiguration = filterConfiguration;
         return this;
     }

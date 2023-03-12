@@ -5,6 +5,7 @@ import com.jfilter.converter.SerializationConfig;
 import com.jfilter.mapper.FilterObjectMapper;
 import com.jfilter.mapper.FilterXmlMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter;
@@ -19,14 +20,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Consumer;
 
-import static com.jfilter.FilterConstantsHelper.MEDIA_SUB_TYPE_JSON;
-import static com.jfilter.FilterConstantsHelper.MEDIA_SUB_TYPE_JSON2;
-import static com.jfilter.FilterConstantsHelper.MEDIA_SUB_TYPE_XML;
-import static com.jfilter.FilterConstantsHelper.MEDIA_SUB_TYPE_XML2;
-import static com.jfilter.FilterConstantsHelper.MEDIA_TYPE_APPLICATION;
-import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
-import static org.springframework.http.MediaType.APPLICATION_XML;
+import static com.jfilter.FilterConstantsHelper.*;
+import static org.springframework.http.MediaType.*;
 
 /**
  * This class give access to extending of ObjectMapper lists and control of filter functionality
@@ -72,7 +67,7 @@ public class FilterConfiguration {
      */
     @Autowired
     @SuppressWarnings("unused")
-    private FilterConfiguration setObjectMapperCache(ObjectMapperCache objectMapperCache) {
+    private FilterConfiguration setObjectMapperCache(@Lazy ObjectMapperCache objectMapperCache) {
         this.objectMapperCache = objectMapperCache;
         return this;
     }
