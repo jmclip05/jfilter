@@ -3,7 +3,6 @@ package com.jfilter.filter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.jfilter.FilterException;
-import com.jfilter.components.FileWatcher;
 import com.jfilter.request.RequestSession;
 import org.springframework.core.MethodParameter;
 
@@ -28,11 +27,6 @@ public class FileFilter extends BaseFilter {
     public FileFilter(MethodParameter methodParameter) {
         super(methodParameter);
         setConfig(methodParameter);
-    }
-
-    public void setFileWatcher(FileWatcher fileWatcher) {
-        if (fileWatcher != null)
-            fileWatcher.add(file, f -> config = load(file));
     }
 
     /**
